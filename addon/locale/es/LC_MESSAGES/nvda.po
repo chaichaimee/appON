@@ -1,0 +1,131 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: appOn 2026.3.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-21 11:06+0700\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Anonymous <anonymous@example.com>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: NVDA DevOn Addon\n"
+
+#: __init__.py:33
+#: menu.py:18
+msgid "AppOnMenu"
+msgstr "AppOnMenu"
+
+#: detectors.py:88
+msgid "Audacity"
+msgstr "Audacity"
+
+#: detectors.py:89
+msgid "Brave"
+msgstr "Brave"
+
+#: detectors.py:90
+msgid "Chrome"
+msgstr "Chrome"
+
+#: detectors.py:104
+msgid "Command Prompt"
+msgstr "Símbolo del sistema"
+
+#: detectors.py:105
+msgid "Control Panel"
+msgstr "Panel de control"
+
+#: detectors.py:103
+msgid "Disk Cleanup"
+msgstr "Liberador de espacio en disco"
+
+#: detectors.py:91
+msgid "Edge"
+msgstr "Edge"
+
+#: __init__.py:109
+msgid "Error opening Windows Security: {error}"
+msgstr "Error al abrir Seguridad de Windows: {error}"
+
+#: __init__.py:102
+#: __init__.py:125
+msgid "Error: {error}"
+msgstr "Error: {error}"
+
+#: detectors.py:92
+msgid "Everything"
+msgstr "Everything"
+
+#: detectors.py:93
+msgid "Firefox"
+msgstr "Firefox"
+
+#: detectors.py:94
+msgid "GitHub Desktop"
+msgstr "GitHub Desktop"
+
+#: detectors.py:113
+msgid "Google Drive for Desktop"
+msgstr "Google Drive para escritorio"
+
+#: detectors.py:95
+msgid "Microsoft Excel"
+msgstr "Microsoft Excel"
+
+#: detectors.py:96
+msgid "Microsoft PowerPoint"
+msgstr "Microsoft PowerPoint"
+
+#: detectors.py:97
+msgid "Microsoft Word"
+msgstr "Microsoft Word"
+
+#: detectors.py:98
+msgid "Notepad"
+msgstr "Bloc de notas"
+
+#: detectors.py:99
+msgid "Notepad++"
+msgstr "Notepad++"
+
+#: detectors.py:106
+msgid "PowerShell"
+msgstr "PowerShell"
+
+#: detectors.py:100
+msgid "Reaper"
+msgstr "Reaper"
+
+#: detectors.py:107
+msgid "Registry Editor"
+msgstr "Editor del Registro"
+
+#: __init__.py:130
+msgid "Shows the appOn menu."
+msgstr "Muestra el menú de appOn."
+
+#: menu.py:72
+msgid "Sort A-Z"
+msgstr "Ordenar A-Z"
+
+#: menu.py:73
+msgid "Sort by Category"
+msgstr "Ordenar por categoría"
+
+#: detectors.py:108
+msgid "This PC"
+msgstr "Este equipo"
+
+#: detectors.py:101
+msgid "Winamp"
+msgstr "Winamp"
+
+#: detectors.py:109
+msgid "Windows Defender"
+msgstr "Windows Defender"
+
+#: detectors.py:102
+msgid "WordPad"
+msgstr "WordPad"
