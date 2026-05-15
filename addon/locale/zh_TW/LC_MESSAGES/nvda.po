@@ -1,0 +1,131 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: appOn 2026.5.3\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-05-15 09:39+0700\n"
+"PO-Revision-Date: 2026-05-15 09:39+0700\n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
+"Language-Team: Chinese (Traditional)\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: DevOn Addon\n"
+
+#: __init__.py:45
+#: menu.py:18
+msgid "AppOnMenu"
+msgstr "AppOn 功能表"
+
+#: detectors.py:186
+msgid "Audacity"
+msgstr "Audacity"
+
+#: detectors.py:187
+msgid "Brave"
+msgstr "Brave"
+
+#: detectors.py:188
+msgid "Chrome"
+msgstr "Chrome"
+
+#: detectors.py:202
+msgid "Command Prompt"
+msgstr "命令提示字元"
+
+#: detectors.py:203
+msgid "Control Panel"
+msgstr "控制台"
+
+#: detectors.py:201
+msgid "Disk Cleanup"
+msgstr "磁碟清理"
+
+#: detectors.py:189
+msgid "Edge"
+msgstr "Edge"
+
+#: __init__.py:87
+msgid "Error opening Windows Security: {error}"
+msgstr "開啟 Windows 安全中心時發生錯誤: {error}"
+
+#: __init__.py:81
+#: __init__.py:101
+msgid "Error: {error}"
+msgstr "錯誤: {error}"
+
+#: detectors.py:190
+msgid "Everything"
+msgstr "Everything"
+
+#: detectors.py:191
+msgid "Firefox"
+msgstr "Firefox"
+
+#: detectors.py:192
+msgid "GitHub Desktop"
+msgstr "GitHub Desktop"
+
+#: detectors.py:208
+msgid "Google Drive for Desktop"
+msgstr "Google 雲端硬碟電腦版"
+
+#: detectors.py:193
+msgid "Microsoft Excel"
+msgstr "Microsoft Excel"
+
+#: detectors.py:194
+msgid "Microsoft PowerPoint"
+msgstr "Microsoft PowerPoint"
+
+#: detectors.py:195
+msgid "Microsoft Word"
+msgstr "Microsoft Word"
+
+#: detectors.py:196
+msgid "Notepad"
+msgstr "記事本"
+
+#: detectors.py:197
+msgid "Notepad++"
+msgstr "Notepad++"
+
+#: detectors.py:204
+msgid "PowerShell"
+msgstr "PowerShell"
+
+#: detectors.py:198
+msgid "Reaper"
+msgstr "Reaper"
+
+#: detectors.py:205
+msgid "Registry Editor"
+msgstr "登錄編輯程式"
+
+#: __init__.py:113
+msgid "Shows the appOn menu."
+msgstr "顯示 appOn 功能表。"
+
+#: menu.py:87
+msgid "Sort A-Z"
+msgstr "依 A-Z 排序"
+
+#: menu.py:88
+msgid "Sort by Category"
+msgstr "依類別排序"
+
+#: detectors.py:206
+msgid "This PC"
+msgstr "本機"
+
+#: detectors.py:199
+msgid "Winamp"
+msgstr "Winamp"
+
+#: detectors.py:207
+msgid "Windows Defender"
+msgstr "Windows Defender"
+
+#: detectors.py:200
+msgid "WordPad"
+msgstr "WordPad"

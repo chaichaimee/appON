@@ -1,131 +1,131 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: appOn 2026.3.4\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-21 11:06+0700\n"
+"Project-Id-Version: appOn 2026.5.3\n"
+"Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
+"POT-Creation-Date: 2026-05-15 09:39+0700\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Anonymous <anonymous@example.com>\n"
+"Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: English\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: NVDA DevOn Addon\n"
+"X-Generator: DevOn Addon\n"
 
-#: __init__.py:33
+#: __init__.py:45
 #: menu.py:18
 msgid "AppOnMenu"
 msgstr "AppOnMenu"
 
-#: detectors.py:88
+#: detectors.py:186
 msgid "Audacity"
 msgstr "Audacity"
 
-#: detectors.py:89
+#: detectors.py:187
 msgid "Brave"
 msgstr "Brave"
 
-#: detectors.py:90
+#: detectors.py:188
 msgid "Chrome"
 msgstr "Chrome"
 
-#: detectors.py:104
+#: detectors.py:202
 msgid "Command Prompt"
 msgstr "Command Prompt"
 
-#: detectors.py:105
+#: detectors.py:203
 msgid "Control Panel"
 msgstr "Control Panel"
 
-#: detectors.py:103
+#: detectors.py:201
 msgid "Disk Cleanup"
 msgstr "Disk Cleanup"
 
-#: detectors.py:91
+#: detectors.py:189
 msgid "Edge"
 msgstr "Edge"
 
-#: __init__.py:109
+#: __init__.py:87
 msgid "Error opening Windows Security: {error}"
 msgstr "Error opening Windows Security: {error}"
 
-#: __init__.py:102
-#: __init__.py:125
+#: __init__.py:81
+#: __init__.py:101
 msgid "Error: {error}"
 msgstr "Error: {error}"
 
-#: detectors.py:92
+#: detectors.py:190
 msgid "Everything"
 msgstr "Everything"
 
-#: detectors.py:93
+#: detectors.py:191
 msgid "Firefox"
 msgstr "Firefox"
 
-#: detectors.py:94
+#: detectors.py:192
 msgid "GitHub Desktop"
 msgstr "GitHub Desktop"
 
-#: detectors.py:113
+#: detectors.py:208
 msgid "Google Drive for Desktop"
 msgstr "Google Drive for Desktop"
 
-#: detectors.py:95
+#: detectors.py:193
 msgid "Microsoft Excel"
 msgstr "Microsoft Excel"
 
-#: detectors.py:96
+#: detectors.py:194
 msgid "Microsoft PowerPoint"
 msgstr "Microsoft PowerPoint"
 
-#: detectors.py:97
+#: detectors.py:195
 msgid "Microsoft Word"
 msgstr "Microsoft Word"
 
-#: detectors.py:98
+#: detectors.py:196
 msgid "Notepad"
 msgstr "Notepad"
 
-#: detectors.py:99
+#: detectors.py:197
 msgid "Notepad++"
 msgstr "Notepad++"
 
-#: detectors.py:106
+#: detectors.py:204
 msgid "PowerShell"
 msgstr "PowerShell"
 
-#: detectors.py:100
+#: detectors.py:198
 msgid "Reaper"
 msgstr "Reaper"
 
-#: detectors.py:107
+#: detectors.py:205
 msgid "Registry Editor"
 msgstr "Registry Editor"
 
-#: __init__.py:130
+#: __init__.py:113
 msgid "Shows the appOn menu."
 msgstr "Shows the appOn menu."
 
-#: menu.py:72
+#: menu.py:87
 msgid "Sort A-Z"
 msgstr "Sort A-Z"
 
-#: menu.py:73
+#: menu.py:88
 msgid "Sort by Category"
 msgstr "Sort by Category"
 
-#: detectors.py:108
+#: detectors.py:206
 msgid "This PC"
 msgstr "This PC"
 
-#: detectors.py:101
+#: detectors.py:199
 msgid "Winamp"
 msgstr "Winamp"
 
-#: detectors.py:109
+#: detectors.py:207
 msgid "Windows Defender"
 msgstr "Windows Defender"
 
-#: detectors.py:102
+#: detectors.py:200
 msgid "WordPad"
 msgstr "WordPad"
