@@ -1,4 +1,7 @@
 # menu.py
+# Copyright (C) 2026 Chai Chaimee
+# Licensed under GNU General Public License. See COPYING.txt for details.
+
 import wx
 import addonHandler
 import tones
@@ -15,7 +18,7 @@ _active_instance = None
 
 class AppOnMenu(wx.Frame):
 	def __init__(self, items_func, callback, config_path, on_closed=None):
-		super().__init__(None, title=_("AppOnMenu"), size=(400, 500), style=wx.DEFAULT_FRAME_STYLE | wx.STAY_ON_TOP)
+		super().__init__(None, title="AppOnMenu", size=(400, 500), style=wx.DEFAULT_FRAME_STYLE | wx.STAY_ON_TOP)
 		self.items_func = items_func
 		self.callback = callback
 		self.config_path = config_path
