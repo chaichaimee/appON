@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="nvda.png" alt="NVDA Logo" width="150">
-</p>
+![NVDA Logo](../nvda.png)
 
 # appOn
 
@@ -9,60 +7,72 @@
 
 ---
 
-<br />
+## Introduction
 
-## Command Your Workspace with Surgical Precision
-Stop wasting time hunting through the Start menu or cluttering your desktop. **appOn** is the ultimate power-tool for NVDA users who demand speed, intelligence, and a clutter-free workflow. It doesn’t just "open" apps; it orchestrates your entire digital environment.
+**appOn** is an NVDA add‑on that revolutionizes how you launch and switch between applications. With a single keystroke, you can instantly bring any app to the foreground, or if it’s not running, launch it without delay. No more hunting through cluttered Start menus, scrolling through crowded taskbars, or memorizing complex file paths. appOn puts your entire software ecosystem at your fingertips – fast, intelligent, and effortlessly accessible.
 
-<br />
+## Key Features
 
-## The Power of "Smart Activation"
-Why launch a second instance of Word when you already have one open? **appOn** is built with high-intelligence detection. If your app is already running, appOn instantly brings it to the foreground and **maximizes it automatically**. If it’s not running, it hunts down the executable and fires it up in milliseconds. It’s smart, it’s fast, and it’s seamless.
+- **Smart Application Detection:** If an app is already running, appOn brings it to the front and maximizes it immediately. If not, it launches the app in a flash – no duplicates, no fuss.
+- **Dynamic Menu (Alt+Windows+A):** Summon a fully interactive list of all your configured applications. The menu is searchable, sortable, and stays open after launching, so you can fire up multiple tools in one session.
+- **Version Intelligence:** The menu automatically detects and displays the exact version number of each application (e.g., "Microsoft Word 2024" or "Chrome 122.0.6254"). You always know exactly what you’re opening.
+- **Two Sorting Modes:** Arrange your apps alphabetically or by logical categories (Browsers, Documents, System Tools, etc.). Your preference is saved automatically for next time.
+- **Auto‑Close Timer:** The menu monitors your activity and automatically closes after 15 seconds of idle time – keeping your system clean and your focus on the task at hand.
+- **Fully Customizable Hotkeys:** Assign your own keyboard shortcuts to any app via the NVDA Input Gestures dialog (appOn category). Your workflow, your rules.
+- **Intelligent Caching:** The add‑on caches application paths and versions in the background, so the menu loads instantly every time you open it.
 
-<br />
+## Benefits
 
-## Two Ways to Rule Them All
-Whether you are a keyboard ninja or a lover of organized menus, we have you covered:
+- **Save Precious Time:** Launch applications in a fraction of a second – no more navigating through nested Start menus or searching for desktop icons.
+- **Reduce Keystroke Fatigue:** One dedicated gesture per app eliminates repetitive clicking, scrolling, and typing, making your workflow smoother and more comfortable.
+- **Boost Productivity:** Quickly switch between your essential tools with zero friction. Stay in the flow and get more done without breaking your concentration.
+- **Stay Organized:** The category sorting helps you find apps faster, especially when you have a large collection of installed software.
+- **Always Know the Version:** Never accidentally open an outdated version of an app – the version display gives you confidence and clarity with every launch.
 
-* **1. Total Freedom (Input Gestures):** Assign your own custom lightning-fast hotkeys for every single application via the NVDA Input Gestures dialog. Your workflow, your rules.
-* **2. The Intelligent Command Center (appOn Menu):** Don't want to memorize dozens of keys? Press `Alt+Windows+A` to summon the dynamic menu.
+## Why use appOn?
 
-<br />
+In a busy workflow, every second counts. The traditional ways of launching applications – searching the Start menu, scrolling through taskbar icons, or cluttering your desktop with shortcuts – are slow, inefficient, and often interrupt your focus. appOn eliminates these barriers by giving you instant, keyboard‑centric control over your entire software ecosystem. Whether you're a coder, a writer, a power user, or just someone who values efficiency, appOn ensures that your tools are always just a keystroke away, so you can stay in the flow and accomplish more with less effort.
 
----
+## Screenshots
 
-<br />
+While appOn is fully accessible and designed for screen reader users, the following screenshots are provided for sighted trainers, colleagues, or documentation purposes.
 
-## The "Mission Impossible" Menu Experience
-The **appOn Menu** isn't just a list; it’s a living interface:
+![appOn menu window displaying a list of applications sorted alphabetically, with Microsoft Word highlighted and its version number shown.](screenshot1.png)
 
-* **Version Intelligence:** The menu automatically detects and displays the exact version number of your apps (e.g., "Microsoft Word 2021" or "Chrome 122.x"). You’ll always know exactly what you’re launching.
-* **The Dynamic Multi-Launch:** Unlike standard menus that close after one click, the appOn menu stays open, allowing you to fire up a whole suite of tools in one session.
-* **The Self-Destruct Sequence:** In true *Mission Impossible* fashion, the menu monitors your activity. Once you stop interacting with it, it will **automatically close and destroy its own process after 30 seconds** of idle time.
+![appOn context menu showing two sorting options: Sort A-Z and Sort by Category, with Sort by Category currently selected.](screenshot2.png)
 
-<br />
-
----
-
-<br />
+![appOn menu still open after launching Google Chrome, ready to launch another application without closing.](screenshot3.png)
 
 ## Key Commands
 
 | Command | Action |
 | :--- | :--- |
 | `Alt+Windows+A` | Summon the Intelligent appOn Menu (Default) |
-| `Escape` | Terminate the menu immediately |
-| `Custom Keys` | Set your own shortcuts in NVDA Input Gestures |
+| `Escape` (Inside Menu) | Abnormally terminate the menu immediately |
+| `Custom Keys` | Set your own shortcuts in NVDA Input Gestures > appOn category |
 
-<br />
+## Featured Applications
+
+appOn comes pre-configured to detect and manage a massive array of professional tools, including:
+
+- **Office Suites:** Microsoft Word, Excel, PowerPoint.
+- **Development & Text:** Notepad++, GitHub Desktop, Registry Editor, CMD, PowerShell.
+- **Web Browsers:** Chrome, Firefox, Edge, Brave.
+- **Production & Media:** REAPER, Audacity, Winamp.
+- **System Utilities:** Everything Search, Disk Cleanup, Windows Defender, File Explorer.
+
+*Experience the evolution of application management. Your commands, executed instantly.*
 
 ---
 
-<br />
+## Support Me
 
-## Featured Applications
-appOn comes pre-configured for professional tools: **Office Suites**, **Development & Text** (Notepad++, GitHub Desktop, CMD), **Web Browsers**, **Media Production** (REAPER, Audacity), and **System Utilities**.
+If this tool has made your life easier, consider fueling the next update with a small donation.
 
-<br />
+[![Support me](https://img.shields.io/badge/Donate-Support%20Me-blue?style=for-the-badge&logo=stripe)](https://buy.stripe.com/dRm9AU1xQ3Ds22N6VK1VK01)
 
-*Experience the evolution of application management. Your commands, executed instantly.*
+Your support means the world. Let's build something great together.
+
+---
+
+&copy; 2026 Chai Chaimee NVDA Add-on Released under GNU General Public License. See COPYING.txt for details.
