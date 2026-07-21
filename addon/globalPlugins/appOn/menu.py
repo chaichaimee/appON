@@ -1,6 +1,4 @@
 # menu.py
-# Copyright (C) 2026 Chai Chaimee
-# Licensed under GNU General Public License. See COPYING.txt for details.
 
 import wx
 import addonHandler
@@ -80,6 +78,7 @@ class AppOnMenu(wx.Frame):
 		self.list_box.SetFocus()
 
 	def _sort_items(self, items):
+		# items are tuples of (label, method, category)
 		if self.sort_mode == "category":
 			return sorted(items, key=lambda x: (x[2] if len(x) > 2 else "7_Others", x[0].lower()))
 		else:

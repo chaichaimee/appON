@@ -1,4 +1,5 @@
 # detectors.py
+
 import os
 import re
 import addonHandler
@@ -19,12 +20,19 @@ _cache = {
 	"items": None,
 	"last_update": 0,
 	"is_loading": False,
-	"listeners": []
+	"listeners": [],
+	"shutdown": False
 }
 
 def register_cache_listener(callback: Callable):
 	if callback not in _cache["listeners"]:
 		_cache["listeners"].append(callback)
+
+def unregister_cache_listener(callback: Callable):
+	try:
+		_cache["listeners"].remove(callback)
+	except ValueError:
+		pass
 
 def _notify_listeners():
 	for cb in _cache["listeners"]:
@@ -35,16 +43,21 @@ def _notify_listeners():
 			logHandler.log.error(f"Cache listener error: {err}")
 
 def start_cache_refresh():
-	if _cache["is_loading"]:
+	if _cache["is_loading"] or _cache["shutdown"]:
 		return
 	_cache["is_loading"] = True
 	thread = threading.Thread(target=_build_cache, daemon=True)
 	thread.start()
 
 def _build_cache():
+	if _cache["shutdown"]:
+		_cache["is_loading"] = False
+		return
 	try:
 		new_items = []
 		for key, display_name, paths in APP_DEFINITIONS:
+			if _cache["shutdown"]:
+				break
 			exePath = find_exe(paths)
 			if exePath or key in NO_VERSION_TOOLS_KEYS:
 				version = ""
@@ -62,19 +75,21 @@ def _build_cache():
 					"display": display_name,
 					"version": version,
 					"exe_path": exePath,
-					"cat": _get_category(key)
+					"cat": get_category(key)
 				})
-		_cache["items"] = new_items
-		_cache["last_update"] = time.time()
+		if not _cache["shutdown"]:
+			_cache["items"] = new_items
+			_cache["last_update"] = time.time()
 	except Exception as err:
 		import logHandler
 		logHandler.log.error(f"Cache build failed: {err}")
 	finally:
 		_cache["is_loading"] = False
-		import wx
-		wx.CallAfter(_notify_listeners)
+		if not _cache["shutdown"]:
+			import wx
+			wx.CallAfter(_notify_listeners)
 
-def _get_category(key: str) -> str:
+def get_category(key: str) -> str:
 	category_map = {
 		"1_Browsers": ["chrome", "edge", "firefox", "brave"],
 		"2_Documents": ["word", "excel", "powerpoint"],
@@ -87,6 +102,9 @@ def _get_category(key: str) -> str:
 		if key in keys:
 			return cat
 	return "7_Others"
+
+# For backward compatibility within the module, if called _get_category
+_get_category = get_category
 
 def get_cached_app_items(sort_mode: str = "alphabet") -> List[Tuple[str, str, Optional[str]]]:
 	if _cache["items"] is None:
@@ -142,6 +160,8 @@ def get_special_app_version(key: str, exePath: str) -> str:
 	return ""
 
 def get_app_version_from_registry(snippet: str) -> str:
+	if not snippet:
+		return ""
 	root_paths = [
 		(winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"),
 		(winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall"),
@@ -151,6 +171,8 @@ def get_app_version_from_registry(snippet: str) -> str:
 		try:
 			with winreg.OpenKey(hkey, base_path) as root_key:
 				for i in range(winreg.QueryInfoKey(root_key)[0]):
+					if _cache["shutdown"]:
+						return ""
 					try:
 						sub_key_name = winreg.EnumKey(root_key, i)
 						with winreg.OpenKey(root_key, sub_key_name) as sub_key:

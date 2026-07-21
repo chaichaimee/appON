@@ -12,6 +12,7 @@ from . import detectors
 from . import menu
 from NVDAObjects import NVDAObject
 from controlTypes import Role
+import winUser
 
 addonHandler.initTranslation()
 try:
@@ -33,35 +34,37 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		detectors.register_cache_listener(self._on_cache_updated)
 		self._active_menu = None
 
+	def terminate(self):
+		detectors.unregister_cache_listener(self._on_cache_updated)
+		self._active_menu = None
+		super().terminate()
+
 	def _on_cache_updated(self):
-		if self._active_menu and hasattr(self._active_menu, 'refresh_list'):
-			wx.CallAfter(self._active_menu.refresh_list, use_cache=True)
+		if not self._active_menu or hasattr(self._active_menu, 'IsBeingDeleted') and self._active_menu.IsBeingDeleted():
+			return
+		if hasattr(self._active_menu, 'refresh_list'):
+			wx.CallAfter(self._safe_refresh_menu)
+
+	def _safe_refresh_menu(self):
+		if not self._active_menu or self._active_menu.IsBeingDeleted():
+			return
+		try:
+			self._active_menu.refresh_list(use_cache=True)
+		except Exception:
+			pass
 
 	def chooseNVDAObjectOverlayClasses(self, obj, clsList):
-		# Safely check if the object is a list item
 		try:
 			if obj.role != Role.LISTITEM:
 				return
 		except Exception:
 			return
 
+		# Use window handle to check parent window title efficiently
 		try:
-			parent = obj.parent
-			if parent is None:
-				return
-
-			# Walk up to 3 levels to find the AppOnMenu window
-			for _ in range(3):
-				if parent is None:
-					return
-				try:
-					if parent.role == Role.WINDOW and parent.name == "AppOnMenu":
-						clsList.insert(0, NoPositionListItem)
-						return
-				except Exception:
-					pass
-				# Use getattr to avoid AttributeError if parent has no 'parent' attribute
-				parent = getattr(parent, 'parent', None)
+			hwnd = obj.windowHandle
+			if hwnd and winUser.getWindowText(hwnd) == "AppOnMenu":
+				clsList.insert(0, NoPositionListItem)
 		except Exception:
 			pass
 
@@ -85,7 +88,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		for label, key, _ in cachedItems:
 			method = appMethodMap.get(key)
 			if method:
-				result.append((label, method))
+				category = detectors._get_category(key)
+				result.append((label, method, category))
 		return result
 
 	def _launchByKey(self, key, requireAdmin=False):
@@ -121,12 +125,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_showAppMenu(self, gesture):
 		def on_menu_closed():
 			self._active_menu = None
-		wx.CallAfter(lambda: setattr(self, '_active_menu', menu.showAppMenu(
-			self._getAvailableAppItems,
-			lambda cb: cb(None),
-			self.CONFIG_PATH,
-			on_closed=on_menu_closed
-		)))
+		def create_menu():
+			self._active_menu = menu.showAppMenu(
+				self._getAvailableAppItems,
+				lambda cb: cb(None),
+				self.CONFIG_PATH,
+				on_closed=on_menu_closed
+			)
+		wx.CallAfter(create_menu)
 	script_showAppMenu.__doc__ = _("Shows the appOn menu with all available applications")
 	script_showAppMenu.category = "appOn"
 
