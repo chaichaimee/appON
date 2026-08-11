@@ -2,130 +2,226 @@ msgid ""
 msgstr ""
 "Project-Id-Version: appOn 2026.5.3\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-05-15 09:39+0700\n"
-"PO-Revision-Date: 2026-05-15 09:39+0700\n"
+"POT-Creation-Date: 2026-06-29 12:45+0300\n"
+"PO-Revision-Date: 2026-06-29 12:52+0300\n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: DevOn Addon\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ../../../globalPlugins\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: __init__.py:45
-#: menu.py:18
-msgid "AppOnMenu"
-msgstr "Меню AppOn"
-
-#: detectors.py:186
-msgid "Audacity"
-msgstr "Audacity"
-
-#: detectors.py:187
-msgid "Brave"
-msgstr "Brave"
-
-#: detectors.py:188
-msgid "Chrome"
-msgstr "Chrome"
-
-#: detectors.py:202
-msgid "Command Prompt"
-msgstr "Командний рядок"
-
-#: detectors.py:203
-msgid "Control Panel"
-msgstr "Панель керування"
-
-#: detectors.py:201
-msgid "Disk Cleanup"
-msgstr "Очищення диска"
-
-#: detectors.py:189
-msgid "Edge"
-msgstr "Edge"
-
-#: __init__.py:87
-msgid "Error opening Windows Security: {error}"
-msgstr "Помилка відкриття служби «Безпека Windows»: {error}"
-
-#: __init__.py:81
-#: __init__.py:101
+#: appOn/__init__.py:99 appOn/__init__.py:119
+#, python-brace-format
 msgid "Error: {error}"
 msgstr "Помилка: {error}"
 
-#: detectors.py:190
+#: appOn/__init__.py:105
+#, python-brace-format
+msgid "Error opening Windows Security: {error}"
+msgstr "Помилка відкриття служби «Безпека Windows»: {error}"
+
+#: appOn/__init__.py:130
+msgid "Shows the appOn menu with all available applications"
+msgstr "Показує меню додатків з усіма доступними додатками"
+
+#: appOn/__init__.py:135
+msgid "Launches Audacity application"
+msgstr "Запускає програму Audacity"
+
+#: appOn/__init__.py:140
+msgid "Launches Brave web browser"
+msgstr "Запускає браузер Brave"
+
+#: appOn/__init__.py:145
+msgid "Launches Google Chrome web browser"
+msgstr "Запускає браузер Google Chrome"
+
+#: appOn/__init__.py:150
+msgid "Launches Command Prompt"
+msgstr "Відкриває командний рядок"
+
+#: appOn/__init__.py:155
+msgid "Opens Windows Control Panel"
+msgstr "Відкриває панель керування Windows"
+
+#: appOn/__init__.py:160
+msgid "Launches Windows Disk Cleanup utility"
+msgstr "Запускає утиліту очищення диска Windows"
+
+#: appOn/__init__.py:165
+msgid "Launches Microsoft Edge web browser"
+msgstr "Запускає браузер Microsoft Edge"
+
+#: appOn/__init__.py:170
+msgid "Launches Everything search utility"
+msgstr "Запускає утиліту пошуку Everything"
+
+#: appOn/__init__.py:175
+msgid "Launches Mozilla Firefox web browser"
+msgstr "Запускає браузер Mozilla Firefox"
+
+#: appOn/__init__.py:180
+msgid "Launches GitHub Desktop application"
+msgstr "Запускає настільну програму GitHub"
+
+#: appOn/__init__.py:185
+msgid "Launches Microsoft Excel"
+msgstr "Запускає Microsoft Excel"
+
+#: appOn/__init__.py:190
+msgid "Launches Microsoft PowerPoint"
+msgstr "Запускає Microsoft PowerPoint"
+
+#: appOn/__init__.py:195
+msgid "Launches Microsoft Word"
+msgstr "Запускає Microsoft Word"
+
+#: appOn/__init__.py:200
+msgid "Launches Windows Notepad"
+msgstr "Запускає Блокнот Windows"
+
+#: appOn/__init__.py:205
+msgid "Launches Notepad++ editor"
+msgstr "Запускає редактор Notepad++"
+
+#: appOn/__init__.py:210
+msgid "Launches Windows PowerShell"
+msgstr "Запускає Windows PowerShell"
+
+#: appOn/__init__.py:215
+msgid "Launches REAPER audio software"
+msgstr "Запускає аудіопрограму REAPER"
+
+#: appOn/__init__.py:220
+msgid "Opens Windows Registry Editor"
+msgstr "Відкриває редактор реєстру Windows"
+
+#: appOn/__init__.py:225
+msgid "Opens This PC file explorer"
+msgstr "Відкриває провідник файлів на цьому ПК"
+
+#: appOn/__init__.py:230
+msgid "Launches Winamp media player"
+msgstr "Запускає медіаплеєр Winamp"
+
+#: appOn/__init__.py:235
+msgid "Opens Windows Security settings"
+msgstr "Відкриває налаштування безпеки Windows"
+
+#: appOn/__init__.py:240
+msgid "Launches Windows WordPad"
+msgstr "Запускає Windows WordPad"
+
+#: appOn/__init__.py:245
+msgid "Launches Google Drive for Desktop"
+msgstr "Запускає Google Диск для комп’ютерів"
+
+#: appOn/detectors.py:186
+msgid "Audacity"
+msgstr "Audacity"
+
+#: appOn/detectors.py:187
+msgid "Brave"
+msgstr "Brave"
+
+#: appOn/detectors.py:188
+msgid "Chrome"
+msgstr "Chrome"
+
+#: appOn/detectors.py:189
+msgid "Edge"
+msgstr "Edge"
+
+#: appOn/detectors.py:190
 msgid "Everything"
 msgstr "Everything"
 
-#: detectors.py:191
+#: appOn/detectors.py:191
 msgid "Firefox"
 msgstr "Firefox"
 
-#: detectors.py:192
+#: appOn/detectors.py:192
 msgid "GitHub Desktop"
 msgstr "GitHub Desktop"
 
-#: detectors.py:208
-msgid "Google Drive for Desktop"
-msgstr "Google Диск для комп’ютера"
-
-#: detectors.py:193
+#: appOn/detectors.py:193
 msgid "Microsoft Excel"
 msgstr "Microsoft Excel"
 
-#: detectors.py:194
+#: appOn/detectors.py:194
 msgid "Microsoft PowerPoint"
 msgstr "Microsoft PowerPoint"
 
-#: detectors.py:195
+#: appOn/detectors.py:195
 msgid "Microsoft Word"
 msgstr "Microsoft Word"
 
-#: detectors.py:196
+#: appOn/detectors.py:196
 msgid "Notepad"
 msgstr "Блокнот"
 
-#: detectors.py:197
+#: appOn/detectors.py:197
 msgid "Notepad++"
 msgstr "Notepad++"
 
-#: detectors.py:204
-msgid "PowerShell"
-msgstr "PowerShell"
-
-#: detectors.py:198
+#: appOn/detectors.py:198
 msgid "Reaper"
 msgstr "Reaper"
 
-#: detectors.py:205
-msgid "Registry Editor"
-msgstr "Редактор реєстру"
-
-#: __init__.py:113
-msgid "Shows the appOn menu."
-msgstr "Показує меню appOn."
-
-#: menu.py:87
-msgid "Sort A-Z"
-msgstr "Сортувати від А до Я"
-
-#: menu.py:88
-msgid "Sort by Category"
-msgstr "Сортувати за категорією"
-
-#: detectors.py:206
-msgid "This PC"
-msgstr "Цей ПК"
-
-#: detectors.py:199
+#: appOn/detectors.py:199
 msgid "Winamp"
 msgstr "Winamp"
 
-#: detectors.py:207
+#: appOn/detectors.py:200
+msgid "WordPad"
+msgstr "WordPad"
+
+#: appOn/detectors.py:201
+msgid "Disk Cleanup"
+msgstr "Очищення диска"
+
+#: appOn/detectors.py:202
+msgid "Command Prompt"
+msgstr "Командний рядок"
+
+#: appOn/detectors.py:203
+msgid "Control Panel"
+msgstr "Панель керування"
+
+#: appOn/detectors.py:204
+msgid "PowerShell"
+msgstr "PowerShell"
+
+#: appOn/detectors.py:205
+msgid "Registry Editor"
+msgstr "Редактор реєстру"
+
+#: appOn/detectors.py:206
+msgid "This PC"
+msgstr "Цей ПК"
+
+#: appOn/detectors.py:207
 msgid "Windows Defender"
 msgstr "Windows Defender"
 
-#: detectors.py:200
-msgid "WordPad"
-msgstr "WordPad"
+#: appOn/detectors.py:208
+msgid "Google Drive for Desktop"
+msgstr "Google Диск для комп’ютера"
+
+#: appOn/menu.py:90
+msgid "Sort A-Z"
+msgstr "Сортувати від А до Я"
+
+#: appOn/menu.py:91
+msgid "Sort by Category"
+msgstr "Сортувати за категорією"
+
+#~ msgid "AppOnMenu"
+#~ msgstr "Меню AppOn"
+
+#~ msgid "Shows the appOn menu."
+#~ msgstr "Показує меню appOn."
