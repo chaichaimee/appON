@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: appOn 2026.5.3\n"
+"Project-Id-Version: appOn 2026.9.9\n"
 "Report-Msgid-Bugs-To: chaicm75@gmail.com\n"
-"POT-Creation-Date: 2026-05-15 09:39+0700\n"
-"PO-Revision-Date: 2026-05-15 09:39+0700\n"
+"POT-Creation-Date: 2026-09-07 10:20+0700\n"
+"PO-Revision-Date: \n"
 "Last-Translator: chaiBot and Malee Yamazaki\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -12,120 +12,205 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: DevOn Addon\n"
 
-#: __init__.py:45
-#: menu.py:18
-msgid "AppOnMenu"
-msgstr "Menu AppOn"
+#: __init__.py:139
+#: settingsDialog.py:18
+msgid "AppOn Setting"
+msgstr "Impostazioni AppOn"
 
-#: detectors.py:186
+#: __init__.py:156
+#: detectors.py:229
 msgid "Audacity"
 msgstr "Audacity"
 
-#: detectors.py:187
+#: __init__.py:161
+#: detectors.py:230
 msgid "Brave"
 msgstr "Brave"
 
-#: detectors.py:188
+#: settingsDialog.py:51
+msgid "Cancel"
+msgstr "Annulla"
+
+#: settingsDialog.py:25
+msgid "Choose which apps appear in the AppOn menu:"
+msgstr "Scegli quali app appaiono nel menu AppOn:"
+
+#: detectors.py:231
 msgid "Chrome"
 msgstr "Chrome"
 
-#: detectors.py:202
+#: __init__.py:171
+#: detectors.py:245
 msgid "Command Prompt"
 msgstr "Prompt dei comandi"
 
-#: detectors.py:203
+#: __init__.py:176
+#: detectors.py:246
 msgid "Control Panel"
 msgstr "Pannello di controllo"
 
-#: detectors.py:201
+#: __init__.py:181
+#: detectors.py:244
 msgid "Disk Cleanup"
 msgstr "Pulizia disco"
 
-#: detectors.py:189
+#: detectors.py:232
 msgid "Edge"
 msgstr "Edge"
 
-#: __init__.py:87
+#: __init__.py:115
 msgid "Error opening Windows Security: {error}"
-msgstr "Errore nell'apertura di Sicurezza di Windows: {error}"
+msgstr "Errore durante l'apertura di Sicurezza di Windows: {error}"
 
-#: __init__.py:81
-#: __init__.py:101
+#: __init__.py:109
+#: __init__.py:129
 msgid "Error: {error}"
 msgstr "Errore: {error}"
 
-#: detectors.py:190
+#: __init__.py:191
+#: detectors.py:233
 msgid "Everything"
 msgstr "Everything"
 
-#: detectors.py:191
+#: detectors.py:234
 msgid "Firefox"
 msgstr "Firefox"
 
-#: detectors.py:192
+#: __init__.py:276
+#: detectors.py:253
+msgid "Git"
+msgstr "Git"
+
+#: __init__.py:201
+#: detectors.py:235
 msgid "GitHub Desktop"
 msgstr "GitHub Desktop"
 
-#: detectors.py:208
+#: __init__.py:166
+msgid "Google Chrome"
+msgstr "Google Chrome"
+
+#: __init__.py:266
+#: detectors.py:251
 msgid "Google Drive for Desktop"
 msgstr "Google Drive per desktop"
 
-#: detectors.py:193
+#: __init__.py:281
+#: detectors.py:254
+msgid "LibreOffice Calc"
+msgstr "LibreOffice Calc"
+
+#: __init__.py:286
+#: detectors.py:255
+msgid "LibreOffice Draw"
+msgstr "LibreOffice Draw"
+
+#: __init__.py:291
+#: detectors.py:256
+msgid "LibreOffice Impress"
+msgstr "LibreOffice Impress"
+
+#: __init__.py:296
+#: detectors.py:257
+msgid "LibreOffice Math"
+msgstr "LibreOffice Math"
+
+#: __init__.py:301
+#: detectors.py:258
+msgid "LibreOffice Writer"
+msgstr "LibreOffice Writer"
+
+#: __init__.py:186
+msgid "Microsoft Edge"
+msgstr "Microsoft Edge"
+
+#: __init__.py:206
+#: detectors.py:236
 msgid "Microsoft Excel"
 msgstr "Microsoft Excel"
 
-#: detectors.py:194
+#: __init__.py:211
+#: detectors.py:237
 msgid "Microsoft PowerPoint"
 msgstr "Microsoft PowerPoint"
 
-#: detectors.py:195
+#: __init__.py:216
+#: detectors.py:238
 msgid "Microsoft Word"
 msgstr "Microsoft Word"
 
-#: detectors.py:196
+#: __init__.py:196
+msgid "Mozilla Firefox"
+msgstr "Mozilla Firefox"
+
+#: __init__.py:221
+#: detectors.py:239
 msgid "Notepad"
 msgstr "Blocco note"
 
-#: detectors.py:197
+#: __init__.py:226
+#: detectors.py:240
 msgid "Notepad++"
 msgstr "Notepad++"
 
-#: detectors.py:204
+#: settingsDialog.py:50
+msgid "OK"
+msgstr "OK"
+
+#: __init__.py:231
+#: detectors.py:247
 msgid "PowerShell"
 msgstr "PowerShell"
 
-#: detectors.py:198
+#: __init__.py:236
+msgid "REAPER"
+msgstr "REAPER"
+
+#: detectors.py:241
 msgid "Reaper"
 msgstr "Reaper"
 
-#: detectors.py:205
+#: __init__.py:241
+#: detectors.py:248
 msgid "Registry Editor"
 msgstr "Editor del Registro di sistema"
 
-#: __init__.py:113
-msgid "Shows the appOn menu."
-msgstr "Mostra il menu appOn."
+#: __init__.py:142
+msgid "Shows the appOn menu with all available applications"
+msgstr "Mostra il menu appOn con tutte le applicazioni disponibili"
 
-#: menu.py:87
+#: menu.py:94
 msgid "Sort A-Z"
-msgstr "Ordina A-Z"
+msgstr "Ordina da A a Z"
 
-#: menu.py:88
+#: menu.py:95
 msgid "Sort by Category"
 msgstr "Ordina per categoria"
 
-#: detectors.py:206
+#: __init__.py:246
+#: detectors.py:249
 msgid "This PC"
 msgstr "Questo PC"
 
-#: detectors.py:199
+#: __init__.py:271
+#: detectors.py:252
+msgid "Visual Studio Code"
+msgstr "Visual Studio Code"
+
+#: __init__.py:251
+#: detectors.py:242
 msgid "Winamp"
 msgstr "Winamp"
 
-#: detectors.py:207
+#: detectors.py:250
 msgid "Windows Defender"
 msgstr "Windows Defender"
 
-#: detectors.py:200
+#: __init__.py:256
+msgid "Windows Security"
+msgstr "Sicurezza di Windows"
+
+#: __init__.py:261
+#: detectors.py:243
 msgid "WordPad"
 msgstr "WordPad"

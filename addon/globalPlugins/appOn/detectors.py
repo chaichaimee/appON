@@ -12,7 +12,7 @@ from typing import List, Tuple, Optional, Dict, Callable
 addonHandler.initTranslation()
 try:
 	_ = addonHandler.getTranslation()
-except:
+except AttributeError:
 	def _(x): return x
 
 # ---------- Caching system ----------
@@ -33,6 +33,9 @@ def unregister_cache_listener(callback: Callable):
 		_cache["listeners"].remove(callback)
 	except ValueError:
 		pass
+
+def shutdown_cache():
+	_cache["shutdown"] = True
 
 def _notify_listeners():
 	for cb in _cache["listeners"]:
@@ -61,7 +64,7 @@ def _build_cache():
 			exePath = find_exe(paths)
 			if exePath or key in NO_VERSION_TOOLS_KEYS:
 				version = ""
-				if key not in NO_VERSION_TOOLS_KEYS:
+				if key not in NO_VERSION_TOOLS_KEYS and key not in NO_VERSION_DISPLAY_KEYS:
 					if key in ("word", "excel", "powerpoint"):
 						version = " 2024"
 					else:
@@ -70,6 +73,11 @@ def _build_cache():
 							  (get_file_version(exePath) if exePath else "")
 						if ver:
 							version = f" {ver}"
+						elif key in APP_REGISTRY_MAP:
+							import logHandler
+							logHandler.log.debug(
+								f"AppOn: no version found for '{key}' (registry snippet '{APP_REGISTRY_MAP[key]}', exe_path={exePath})"
+							)
 				new_items.append({
 					"key": key,
 					"display": display_name,
@@ -92,11 +100,13 @@ def _build_cache():
 def get_category(key: str) -> str:
 	category_map = {
 		"1_Browsers": ["chrome", "edge", "firefox", "brave"],
-		"2_Documents": ["word", "excel", "powerpoint"],
+		"2_Documents": ["word", "excel", "powerpoint", "libreofficecalc",
+						"libreofficedraw", "libreofficeimpress", "libreofficemath", "libreofficewriter"],
 		"3_Text Editors": ["notepad", "notepadpp", "wordpad"],
 		"4_Multimedia": ["audacity", "winamp", "reaper"],
 		"5_System Tools": ["cmd", "powershell", "controlpanel", "diskcleanup", "regedit", "thispc", "defender"],
-		"6_Utilities": ["everything", "githubdesktop", "googledrive"]
+		"6_Utilities": ["everything", "githubdesktop", "googledrive"],
+		"7_Development Tools": ["vscode", "git"],
 	}
 	for cat, keys in category_map.items():
 		if key in keys:
@@ -196,12 +206,23 @@ def find_exe(paths: List[str]) -> Optional[str]:
 	return None
 
 # ---------- Constants ----------
-NO_VERSION_TOOLS_KEYS = {"diskcleanup", "thispc", "controlpanel", "cmd", "powershell", "regedit", "wordpad", "notepad", "defender"}
+NO_VERSION_TOOLS_KEYS = {
+	"diskcleanup", "thispc", "controlpanel", "cmd", "powershell", "regedit", "wordpad", "notepad", "defender"
+}
+
+# Apps that ARE gated on a confirmed exePath (unlike NO_VERSION_TOOLS_KEYS above) but
+# should not display a version number, since they are components of a versioned suite
+# whose main entry already shows the version. Currently empty: LibreOffice components
+# now show their own version numbers per direct request.
+NO_VERSION_DISPLAY_KEYS = set()
 
 APP_REGISTRY_MAP = {
 	"audacity": "Audacity", "brave": "Brave", "chrome": "Google Chrome",
 	"edge": "Microsoft Edge", "everything": "Everything", "firefox": "Mozilla Firefox",
-	"githubdesktop": "GitHub Desktop", "notepadpp": "Notepad++", "reaper": "REAPER", "winamp": "Winamp"
+	"githubdesktop": "GitHub Desktop", "notepadpp": "Notepad++", "reaper": "REAPER", "winamp": "Winamp",
+	"vscode": "Visual Studio Code", "git": "Git",
+	"libreofficecalc": "LibreOffice", "libreofficedraw": "LibreOffice",
+	"libreofficeimpress": "LibreOffice", "libreofficemath": "LibreOffice", "libreofficewriter": "LibreOffice"
 }
 
 APP_DEFINITIONS = [
@@ -228,4 +249,11 @@ APP_DEFINITIONS = [
 	("thispc", _("This PC"), [r"explorer.exe"]),
 	("defender", _("Windows Defender"), [r"C:\Program Files\Windows Defender\MSASCui.exe", r"C:\Program Files (x86)\Windows Defender\MSASCui.exe"]),
 	("googledrive", _("Google Drive for Desktop"), [r"C:\Program Files\Google\Drive File Stream\launch.bat", r"C:\Program Files\Google\Drive\launch.bat"]),
+	("vscode", _("Visual Studio Code"), [r"C:\Program Files\Microsoft VS Code\Code.exe"]),
+	("git", _("Git"), [r"C:\Program Files\Git\git-cmd.exe"]),
+	("libreofficecalc", _("LibreOffice Calc"), [r"C:\Program Files\LibreOffice\program\scalc.exe"]),
+	("libreofficedraw", _("LibreOffice Draw"), [r"C:\Program Files\LibreOffice\program\sdraw.exe"]),
+	("libreofficeimpress", _("LibreOffice Impress"), [r"C:\Program Files\LibreOffice\program\simpress.exe"]),
+	("libreofficemath", _("LibreOffice Math"), [r"C:\Program Files\LibreOffice\program\smath.exe"]),
+	("libreofficewriter", _("LibreOffice Writer"), [r"C:\Program Files\LibreOffice\program\swriter.exe"]),
 ]
